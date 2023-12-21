@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/digimons',[App\Http\Controllers\DigimonController::class, 'digimonList']); // Get all digimons 
-Route::get('/digimon',[App\Http\Controllers\DigimonController::class, 'showDigimon']); // Get one digimon
+Route::get('/digimon/{id}',[App\Http\Controllers\DigimonController::class, 'showDigimon']); // Get one digimon

@@ -25,12 +25,9 @@ class DigimonController extends Controller
     /**
      * Display the specified digimon.
      */
-    public function showDigimon(Request $request)
+    public function showDigimon($id)
     {
-        if(!isset($request->id)) {
-            return ["error"=>400,"message"=>"Bad request: Some parameters are missing"];
-        }
-        $digimon = Http::get('https://digi-api.com/api/v1/digimon/'.strval($request->id));
+        $digimon = Http::get('https://digi-api.com/api/v1/digimon/'.$id);
         return json_decode($digimon->body());
     }
 
